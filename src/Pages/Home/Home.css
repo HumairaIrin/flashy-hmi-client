@@ -1,0 +1,58 @@
+.banner {
+    max-height: 80vh;
+}
+
+.banner-section:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    background: linear-gradient(to bottom, rgb(6 6 6 / 50%) 0%, rgb(102 76 23 / 50%) 100%);
+}
+
+.short-text {
+    width: 20%;
+    position: absolute;
+    top: 45%;
+    left: 4%;
+}
+
+.header-text {
+    font-size: 3rem;
+    width: 45%;
+    top: 20%;
+    left: 4%;
+}
+
+
+@media screen and (max-width: 890px) {
+    .header-text {
+        font-size: 2rem;
+    }
+
+    .short-text {
+        width: 45%;
+    }
+
+    .last-text {
+        left: 35%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .header-text {
+        font-size: 21px;
+        width: 95%;
+    }
+
+    .short-text {
+        font-size: small;
+    }
+
+    .last-text {
+        left: 25%;
+    }
+}

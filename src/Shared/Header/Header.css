@@ -1,0 +1,25 @@
+.navbar {
+    background-color: black;
+}
+
+.img-holder {
+    margin-bottom: 8%;
+}
+
+.header-logo {
+    width: 6em;
+    height: 6em;
+}
+
+
+@media screen and (max-width: 768px)and (min-width: 596px) {
+    .img-holder {
+        margin-bottom: 12%;
+    }
+}
+
+@media screen and (max-width: 595px) {
+    .img-holder {
+        margin-bottom: 21%;
+    }
+}
