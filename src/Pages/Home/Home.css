@@ -23,10 +23,13 @@
 .header-text {
     font-size: 3rem;
     width: 45%;
-    top: 20%;
+    top: 25%;
     left: 4%;
 }
 
+.services {
+    margin-top: 3%;
+}
 
 @media screen and (max-width: 890px) {
     .header-text {
@@ -34,11 +37,13 @@
     }
 
     .short-text {
-        width: 45%;
+        width: 55%;
+        top: 40%;
     }
 
     .last-text {
         left: 35%;
+        bottom: 20%;
     }
 }
 
@@ -46,13 +51,17 @@
     .header-text {
         font-size: 21px;
         width: 95%;
+        top: 20%;
     }
 
     .short-text {
-        font-size: small;
+        font-size: 11px;
+        width: 65%;
+        top: 30%;
     }
 
     .last-text {
         left: 25%;
+        bottom: 60%;
     }
 }

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background-image: linear-gradient(to bottom, #000000, #000000, #050505, #261609, #2b1d07, #3a2b0b, #473b0d, #524d0e, #726a0f, #94890f, #b8a80a, #dec900);
+  background-image: linear-gradient(to bottom, #000000, #000000, #050505, #261609, #2b1d07, #3a2b0b, #473b0d, #524d0e, #5a5208, #605807, #675e02, #827600);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
