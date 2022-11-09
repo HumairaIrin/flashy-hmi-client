@@ -1,13 +1,36 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import headerLogo from '../../images/logo.png';
+import { AuthContext } from '../../Pages/Contexts/AuthProvider';
 import './Header.css';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
+
     const menuItems = <>
-        <li className='text-xl font-bold text-white'><Link to='/'>Home</Link></li>
-        <li className='text-xl font-bold text-white'><Link to='/services'>Services</Link></li>
-        <li className='text-xl font-bold text-white'><Link to='/login'>Login</Link></li>
+        <li className='text-lg font-bold text-white'><Link to='/'>Home</Link></li>
+        <li className='text-lg font-bold text-white'><Link to='/services'>Services</Link></li>
+        <>
+            {
+                user?.email ?
+                    <>
+                        <li className='text-lg font-bold text-white'><Link to='/addServices'>Add Services</Link></li>
+                        <li className='text-lg font-bold text-white'><Link to='/myReview'>My Review</Link></li>
+                        <li onClick={handleLogOut} className='text-lg font-bold text-white'><Link to=''>Log Out</Link></li>
+                    </>
+                    :
+                    <>
+                        <li className='text-lg font-bold text-white'><Link to='/login'>Login</Link></li>
+                        <li className='text-lg font-bold text-white'><Link to='/register'>Register</Link></li>
+                    </>
+            }
+        </>
+        <li className='text-lg font-bold text-white'><Link to='/blogs'>Blogs</Link></li>
     </>
     return (
         <div className="navbar h-[6rem] pt-4">

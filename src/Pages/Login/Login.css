@@ -1,0 +1,9 @@
+@media screen and (max-width: 900px) {
+    .login-image {
+        display: none;
+    }
+
+    .hero {
+        display: block;
+    }
+}
