@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import banner from '../../images/banner.jpg';
+import Analytics from '../Analytics/Analytics';
 import ServicesHomePage from '../ServicesHomePage/ServicesHomePage';
+import TopLook from '../TopLook/TopLook';
 import './Home.css'
 
 const Home = () => {
@@ -13,7 +15,7 @@ const Home = () => {
     }, [count])
 
     return (
-        <div className=''>
+        <div>
             <div className='banner-section relative'>
                 <img className='banner w-full' src={banner} alt=''></img>
             </div>
@@ -29,6 +31,13 @@ const Home = () => {
                         service={service}
                     ></ServicesHomePage>)
                 }
+            </div>
+            <div className='flex justify-items-end w-4/5 mx-auto mt-4'><button className='btn btn-light'>All Services</button></div>
+            <div className='p-4'>
+                <TopLook></TopLook>
+            </div>
+            <div>
+                <Analytics></Analytics>
             </div>
         </div>
     );
