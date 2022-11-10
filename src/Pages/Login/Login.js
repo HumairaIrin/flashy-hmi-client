@@ -5,10 +5,12 @@ import loginImage from '../../images/login.webp';
 import { FaGoogle } from 'react-icons/fa';
 import './Login.css';
 import { AuthContext } from '../Contexts/AuthProvider';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
     useTitle('Login');
-    const { login } = useContext(AuthContext);
+    const { login, loginWithGoogle } = useContext(AuthContext);
+    const googleProvider = new GoogleAuthProvider();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -19,9 +21,19 @@ const Login = () => {
         login(email, password)
             .then(result => {
                 const user = result.user;
+                form.reset();
                 console.log(user)
             })
             .catch(error => console.error(error));
+    }
+
+    const handleLoginWithGoogle = () => {
+        loginWithGoogle(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
+            .catch(error => console.log(error))
     }
 
     return (
@@ -53,7 +65,7 @@ const Login = () => {
                                 <button type='submit' className="btn border-0 bg-[#dec145]">Login</button>
                             </div>
                         </form>
-                        <div className="bg-[#ffffff4a] flex items-center text-center p-2 mt-3 rounded-full">
+                        <div onClick={handleLoginWithGoogle} style={{ cursor: 'pointer' }} className="bg-[#ffffff4a] flex items-center text-center p-2 mt-3 rounded-full sign-in">
                             <span className='ml-[3%]'><FaGoogle /></span>
                             <p>Sign with Google</p>
                         </div>

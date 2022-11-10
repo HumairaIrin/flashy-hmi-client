@@ -3,6 +3,7 @@ import Main from '../layouts/Main';
 import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
+import ServiceDetails from '../Pages/ServiceDetails/ServiceDetails';
 import Services from '../Pages/Services/Services';
 
 export const routes = createBrowserRouter([
@@ -28,6 +29,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/service/:id',
+                element: <ServiceDetails></ServiceDetails>
             }
         ]
     }

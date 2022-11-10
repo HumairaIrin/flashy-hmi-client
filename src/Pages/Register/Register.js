@@ -6,7 +6,7 @@ import './Register.css';
 
 const Register = () => {
     useTitle('Register');
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUserProfile } = useContext(AuthContext);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -14,14 +14,24 @@ const Register = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name)
 
         createUser(email, password)
             .then(result => {
                 const user = result.user;
+                form.reset();
+                handleUpdateUser(name);
                 console.log(user)
             })
             .catch(error => console.error(error));
+    }
+
+    const handleUpdateUser = (name) => {
+        const profile = {
+            displayName: name
+        }
+        updateUserProfile(profile)
+            .then(() => { })
+            .catch(error => console.error(error))
     }
 
     return (

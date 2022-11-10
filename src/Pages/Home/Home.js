@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import banner from '../../images/banner.jpg';
 import Analytics from '../Analytics/Analytics';
 import ServicesHomePage from '../ServicesHomePage/ServicesHomePage';
@@ -32,7 +33,7 @@ const Home = () => {
                     ></ServicesHomePage>)
                 }
             </div>
-            <div className='flex justify-items-end w-4/5 mx-auto mt-4'><button className='btn btn-light'>All Services</button></div>
+            <div className='flex justify-items-end w-4/5 mx-auto mt-4'><button className='btn btn-light'><Link to='/services'>All Services</Link> </button></div>
             <div className='p-4'>
                 <TopLook></TopLook>
             </div>
