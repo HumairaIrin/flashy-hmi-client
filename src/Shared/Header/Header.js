@@ -19,12 +19,13 @@ const Header = () => {
             {
                 user?.email ?
                     <>
-                        <li className='text-lg font-bold text-white'><Link to='/addServices'>Add Services</Link></li>
-                        <li className='text-lg font-bold text-white'><Link to='/myReviews'>My Reviews</Link></li>
+
                         <li onClick={handleLogOut} className='text-lg font-bold text-white'><Link to=''>Log Out</Link></li>
                     </>
                     :
                     <>
+                        <li className='text-lg font-bold text-white'><Link to='/addServices'>Add Services</Link></li>
+                        <li className='text-lg font-bold text-white'><Link to='/myReviews'>My Reviews</Link></li>
                         <li className='text-lg font-bold text-white'><Link to='/login'>Login</Link></li>
                         <li className='text-lg font-bold text-white'><Link to='/register'>Register</Link></li>
                     </>
