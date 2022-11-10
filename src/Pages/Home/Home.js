@@ -10,7 +10,7 @@ const Home = () => {
     const [count, setCount] = useState(3);
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/limited?number=${count}`)
+        fetch(`https://flashy-hmi-server.vercel.app/limited?number=${count}`)
             .then(res => res.json())
             .then(data => setServices(data))
     }, [count])

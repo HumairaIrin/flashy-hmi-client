@@ -22,7 +22,7 @@ export const routes = createBrowserRouter([
                 path: '/services',
                 element: <Services></Services>,
                 loader: () => {
-                    return fetch('http://localhost:5000/services');
+                    return fetch('https://flashy-hmi-server.vercel.app/services');
                 }
             },
             {
@@ -37,7 +37,7 @@ export const routes = createBrowserRouter([
                 path: '/service/:id',
                 element: <ServiceDetails></ServiceDetails>,
                 loader: ({ params }) => {
-                    return fetch(`http://localhost:5000/service/${params.id}`);
+                    return fetch(`https://flashy-hmi-server.vercel.app/service/${params.id}`);
                 }
             },
             {

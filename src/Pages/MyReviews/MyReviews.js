@@ -9,7 +9,7 @@ const MyReviews = () => {
     const { user } = useContext(AuthContext);
     const [myReviews, setMyReviews] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/myReviews?email=${user?.email}`)
+        fetch(`https://flashy-hmi-server.vercel.app/myReviews?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setMyReviews(data))
             .catch(error => console.error(error))
@@ -18,7 +18,7 @@ const MyReviews = () => {
     const handleDelete = (_id) => {
         const agree = window.confirm('Are you sure you want to delete this review?');
         if (agree) {
-            fetch(`http://localhost:5000/myReview/${_id}`, {
+            fetch(`https://flashy-hmi-server.vercel.app/myReview/${_id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

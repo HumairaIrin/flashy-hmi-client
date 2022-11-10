@@ -17,7 +17,7 @@ const ServiceDetails = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/${_id}`)
+        fetch(`https://flashy-hmi-server.vercel.app/reviews/${_id}`)
             .then(res => res.json())
             .then(data => setReviews(data))
             .catch(error => console.error(error))
@@ -37,7 +37,7 @@ const ServiceDetails = () => {
             serviceName: serviceName,
             date: new Date()
         }
-        fetch('http://localhost:5000/review', {
+        fetch('https://flashy-hmi-server.vercel.app/review', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
