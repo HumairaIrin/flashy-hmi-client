@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
 import loginImage from '../../images/login.webp';
 import { FaGoogle } from 'react-icons/fa';
@@ -11,6 +11,9 @@ const Login = () => {
     useTitle('Login');
     const { login, loginWithGoogle } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -22,6 +25,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 form.reset();
+                navigate(from, { replace: true });
                 console.log(user)
             })
             .catch(error => console.error(error));
@@ -31,6 +35,7 @@ const Login = () => {
         loginWithGoogle(googleProvider)
             .then(result => {
                 const user = result.user;
+                navigate(from, { replace: true });
                 console.log(user)
             })
             .catch(error => console.log(error))
