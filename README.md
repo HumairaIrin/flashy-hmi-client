@@ -22,5 +22,5 @@ https://flashy-hmi.web.app
 
 **Client:** React, TailwindCSS
 
-**Server:** Express 
+
 
